@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProductiveNITK.apps.ProductivenitkConfig',
+    'timings.apps.TimingsConfig',
 ]
 
 MIDDLEWARE = [
