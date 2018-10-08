@@ -16,7 +16,7 @@ def signup(request):
         email=json.loads(email)
         obj = Users(username=uname,password=password,email=email)
         obj.save()
-        results = 1
+        results = '1'
         return JsonResponse(results,safe=False)
     else:
         return render(request,'ProductiveNITK/signup.html')
@@ -39,10 +39,7 @@ def login(request):
         for e in data1:
             if(password == e.password):
                 result = 1
-                request.session['username'] = uname
-            else:
-                result = 0
-        return JsonResponse(result, safe=False)
+                return JsonResponse(result, safe=False)
     else:
         return render(request, 'ProductiveNITK/login.html')
 

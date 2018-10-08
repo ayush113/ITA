@@ -19,7 +19,7 @@
                     password = JSON.stringify(password);
                     email = JSON.stringify(email);
                     $.post('/signup',{username: username,password:password,email:email},function (results) {
-                        if(results == 1)
+                        if(results == '1')
                         {
                             window.location = "{% url 'login' %}"
                         }
