@@ -19,10 +19,7 @@
                username = JSON.stringify(username);
                password = JSON.stringify(password);
                $.post('/login',{uname:username,pass:password},function (result) {
-                   if(result == 1)
-                   {
                        window.location = "{% url 'home' %}"
-                   }
 
             });
             });

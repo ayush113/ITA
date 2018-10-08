@@ -22,7 +22,7 @@ def signup(request):
         return render(request,'ProductiveNITK/signup.html')
 
 def home(request):
-    return render(request,'ProductiveNITK/home.html')
+        return render(request,'ProductiveNITK/home.html')
 
 def landing(request):
     return render(request,'ProductiveNITK/landingPage.html')
@@ -39,6 +39,7 @@ def login(request):
         for e in data1:
             if(password == e.password):
                 result = 1
+                request.session['username'] = uname
             else:
                 result = 0
         return JsonResponse(result, safe=False)
