@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ProductiveNITK.apps.ProductivenitkConfig',
     'timings.apps.TimingsConfig',
+    'Reminders.apps.RemindersConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ITA',
         'USER': 'root',
-        'PASSWORD': 'chibbu',
+        'PASSWORD': '@yu$h113',
         'HOST': 'localhost',
         'PORT': '3306',
     }
