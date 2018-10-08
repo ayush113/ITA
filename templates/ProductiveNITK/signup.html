@@ -7,125 +7,83 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>
-        HomePage - ITA
+        Sign Up Page - CRM
     </title>
+    <style type="text/css">
+        body{
+            background: linear-gradient(0deg,#007acc,skyblue);
+        }
+        .container
+        {
+            background-color: white;
+            margin-top: 150px;
+            height: 350px;
+            width: 500px;
+            color: black;
+            opacity: 1;
+            font-family: 'Lato',sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #uname{
+            margin-top: 25px;
+        }
+        #pwd{
 
+            margin-top: 25px;
 
-<style>
+        }
+         #email{
 
-.container{
+            margin-top: 25px;
 
-height: 250px;
-max-width: inherit;
-background-color:ghostwhite;
-font-size: 30px;
+        }
+        .btn{
+            color: white;
+            background-color: dimgrey;
+            width: 150px;
+            height: 40px;
+            margin-top: 10px;
 
-}
-
-   .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 250px;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.left {
-    left: 0;
-    background-color: lightblue;
-}
-
-.right {
-    right: 0;
-    background-color: seashell;
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.centered img {
-    width: 150px;
-    border-radius: 50%;
-}
-
-
- .button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-
-</style>
+        }
+        #logs{
+            color: black;
+            margin-top: 25px;
+            font-size: 15px;
+        }
+    </style>
     </head>
+    <body>
 
-
-
-<body>
-
-<div class='container'>
-
-    <h1 align='right' style="margin-right: 50px; padding-top: 20px; font-size: 60px">ProductiveNITK</h1>
-    <p align='right' style="margin-right: 50px">Life Just Got Better.</p>
-
-
-</div>
-
-   <div class="split left">
-  <div style="vertical-align:middle; padding-left: 120px; padding-right: 120px; font-size: 40px; padding-top: 30px">
-
-    <p>The ProductiveNITK application lets you have all your work at one place.We let you create to-do lists, notes and reminders to enhance your productivity.</p>
+        <center>
+        <div class="container form-group">
+            <span>Sign Up</span>
+            <form class="form-horizontal">
+                <div class="form-group">
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="email" placeholder="Email">
+    </div>
   </div>
-</div>
+        <div class="form-group">
+                <div class="col-sm-8">
+                <input type="username" class="form-control" id="uname" placeholder="Username">
+            </div>
 
-<div class="split right">
-  <div class="centered">
-    <button class="button"><span>Sign In </span></button>
-      <button class="button"><span>Sign up</span></button>
+             <div class="form-group">
+                <div class="col-sm-8">
+                <input type="password" class="form-control" id="pwd" placeholder="Password">
+            </div>
+            </div>
 
-
-  </div>
-</div>
-
-</body>
+            <div class="btn">
+                Sign up
+            </div>
+            <div id="logs">
+                Already have an account ?&nbsp;&nbsp;<a href="{% url 'login' %}" style="color: grey">Login</a>
+            </div>
+                </div>
+            </form>
+        </div>
+        </center>
+    </body>
 </html>
