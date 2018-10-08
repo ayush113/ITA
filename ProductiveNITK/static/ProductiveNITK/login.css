@@ -1,0 +1,35 @@
+body{
+        background: linear-gradient(0deg,#007acc,skyblue);
+    }
+.container{
+        background: white;
+        margin-top: 150px;
+        height: 300px;
+        width: 500px;
+        color: #000000;
+        opacity: 1.0;
+        font-family: 'Lato',sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+    }
+#uname{
+        margin-top: 20px;
+    }
+.btn{
+    background: dimgrey;
+    color: white;
+}
+#field{
+    margin-top: 25px;
+}
+#pwd{
+    margin-top: 25px;
+}
+#submit{
+    margin-top: 25px;
+}
+#change{
+    color:black;
+    margin-top: 25px;
+    font-size: 15px;
+}

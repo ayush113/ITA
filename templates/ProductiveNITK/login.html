@@ -9,8 +9,13 @@
     <title>
         Home Page - CRM
     </title>
-    <link rel="stylesheet" type="text/css" href="{% static '' %}">
-    <scritpt src="../index.js"></scritpt>
+    <link rel="stylesheet" type="text/css" href="{% static 'ProductiveNITK/login.css' %}">
+    <script src="{%  static "ProductiveNITK/login.js" %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function(){
+
+        });
+    </script>
     </head>
     <body>
         
@@ -31,10 +36,10 @@
                 </div>
         <div class="form-group">
             <div class="col-sm-4">
-                <button class="btn" id="submit">Login</button>
+                <button class="btn" id="submit" onclick="proceed()">Login</button>
             </div>
             <div id="change">
-                Not a Member? &nbsp;&nbsp;<a href="../SignUp.html" style="color: grey">Sign Up</a>
+                Not a Member? &nbsp;&nbsp;<a href="{% url 'signup'%}" style="color: grey">Sign Up</a>
             </div>
                 </div>
             </form>
