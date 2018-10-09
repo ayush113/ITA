@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('ProductiveNITK.urls')),
     path('app2/',include('Reminders.urls')),
+    path('app4/',include('timings.urls')),
 ]
