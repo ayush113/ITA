@@ -21,11 +21,10 @@
                     $.post('/signup',{username: username,password:password,email:email},function (results) {
                         if(results == '1')
                         {
-                            window.location = "{% url 'login' %}"
+                            window.location.href = "{% url 'login' %}";
                         }
 
                     });
-                    window.location = "{% url 'login' %}"
                 });
             });
 

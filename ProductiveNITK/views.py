@@ -1,9 +1,12 @@
-from django.shortcuts import render, HttpResponseRedirect, reverse
+from django.shortcuts import render, HttpResponseRedirect, reverse,redirect
 from django.views.decorators.csrf import csrf_exempt
 from .models import Users
 import json
 from django.http import JsonResponse
-
+from django.contrib.auth.models import User as authuser
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as logs
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @csrf_exempt
@@ -18,12 +21,15 @@ def signup(request):
         email = json.loads(email)
         obj = Users(username=uname, password=password, email=email)
         obj.save()
-        results = '1'
-        return JsonResponse(results, safe=False)
+        someuser = authuser.objects.create_user(uname,email,password)
+        someuser.save()
+        #results = '1'
+        return redirect(reverse('login'))
+        #return JsonResponse(results, safe=False)
     else:
         return render(request, 'ProductiveNITK/signup.html')
 
-
+@login_required
 def home(request):
     return render(request, 'ProductiveNITK/home.html')
 
@@ -40,10 +46,16 @@ def login(request):
         uname = json.loads(uname)
         password = data.get('pass')
         password = json.loads(password)
-        data1 = Users.objects.all().filter(username=uname)
-        for e in data1:
-            if (password == e.password):
-                result = 1
-                return JsonResponse(result, safe=False)
+        user = authenticate(username=uname,password=password)
+        if user is not None:
+            logs(request,user)
+            return redirect('home')
+            '''result = 1
+            print (result)
+            return JsonResponse(result,safe=False)'''
+        else:
+            print("ASDSAD")
+            print("sdfs")
+            return redirect('signup')
     else:
         return render(request, 'ProductiveNITK/login.html')

@@ -18,9 +18,15 @@
                var password = $("#pwd").val();
                username = JSON.stringify(username);
                password = JSON.stringify(password);
+               alert("ATYUSH");
                $.post('/login',{uname:username,pass:password},function (result) {
-                       window.location.href = "{% url 'home' %}"
-
+                   alert("was i here");
+                   if(result == '1')
+                   {
+                       alert("ASDHJAKSDN");
+                        window.location.href = "{% url 'home' %}";
+                   }
+                   alert("HERE TOO");
             });
             });
         });

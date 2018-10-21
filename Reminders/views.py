@@ -30,10 +30,11 @@ def createReminder(request):
     return render(request, 'Reminders/reminderCreate.html')
 
 
+#Joshua's Code Edit and change accordingly works out of the box though
 def send_mail(message):
 
     sendEmail = 'ayush.work113@gmail.com'
-    sendPwd =
+    sendPwd = 'Bull Right Now Change Later according to needs'
     rec_name = 'Ayush'
     rec_email = 'ayush.kumar1999@hotmail.com'
     # SENDS VERIFICATION EMAIL, PASSWORD SEND EMAIL, AND REPORTS TO USERS
